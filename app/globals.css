@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+.hover-transition {
+  transition: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
