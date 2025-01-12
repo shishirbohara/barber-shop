@@ -1,10 +1,12 @@
 import Hero from "./Hero";
+import LandingAbout from "./LandingAbout";
 
 export default function Landing() {
   return (
-    <div>
+    <>
       <Hero/>
+      <LandingAbout/>
       
-    </div>
+    </>
   )
 }
