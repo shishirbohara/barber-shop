@@ -2,7 +2,7 @@ import { barberData } from "@/utils/barberData";
 import { Scissors, Check } from "lucide-react";
 import Image from "next/image";
 
-export default function Home() {
+export default function LandingAbout() {
   return (
     <main className="min-h-screen px-52 bg-[#F5EEE7]">
       <div className="max-w-7xl mx-auto px-8 py-16">
