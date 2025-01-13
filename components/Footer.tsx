@@ -5,7 +5,7 @@ import { FaPinterestP } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="py-10 px-52 bg-black mt-10">
+    <div className="py-10 px-52 bg-black">
       <div className="text-white grid grid-cols-3">
         <div className="text-[#ABA59F]">
           <h1 className="text-2xl font-bold mb-3 text-white">Contact</h1>
@@ -46,7 +46,7 @@ export default function Footer() {
 
 
       </div>
-      <hr className="mt-10 opacity-15"/>
+      <hr className="mt-10 opacity-15" />
       <p className="mt-5 text-xs text-[#91765A]">© {new Date().getFullYear()} Barber Shop. All rights reserved.</p>
     </div>
   )

@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen px-52 bg-[#F5EEE7]">
-      <div className="max-w-7xl mx-auto px-8 py-12">
+      <div className="max-w-7xl mx-auto px-8 py-16">
         <div className="space-y-4">
 
           <div className="space-y-2">
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-10 py-12">
+      <div className="grid grid-cols-3 gap-10 py-20">
         {
           barberData.map((items, index) => (
             <div key={index}>
