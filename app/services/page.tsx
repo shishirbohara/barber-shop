@@ -4,7 +4,6 @@ import Service from "@/components/Landing/Service";
 import { ServiceData } from "@/utils/serviceData";
 import Image from "next/image";
 import Link from "next/link";
-import { IconBase } from "react-icons";
 
 export default function Services() {
     return (
