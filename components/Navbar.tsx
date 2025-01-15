@@ -3,16 +3,17 @@
 import { NavLinks } from "@/utils/navlinks";
 import { Scissors } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
     const navRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         const navbar = navRef.current;
         gsap.set(navbar, {
             backgroundColor: "transparent",

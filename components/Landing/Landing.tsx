@@ -7,11 +7,11 @@ import Service from "./Service";
 export default function Landing() {
   return (
     <>
-      <Hero/>
-      <LandingAbout/>
-      <Experience/>
-      <Service/>
-      <Appointment/>
+      <Hero />
+      <LandingAbout />
+      <Experience />
+      <Service />
+      <Appointment />
     </>
-  )
+  );
 }

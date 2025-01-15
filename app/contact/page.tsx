@@ -1,11 +1,27 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { contactInfo } from "@/utils/contactInfo";
+import { setupScrollTrigger } from "@/gsap/ScrollTrigger";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
 export default function Contact() {
+  const headingRef = useRef<HTMLDivElement>(null!);
+  const descriptionRef = useRef<HTMLDivElement>(null!);
+  const servicesRef = useRef<HTMLDivElement>(null!);
+  const imagesRef = useRef<HTMLDivElement>(null!);
+
+  useGSAP(() => {
+    setupScrollTrigger({
+      headingRef,
+      descriptionRef,
+      servicesRef,
+      imagesRef
+    });
+  });
   return (
     <>
       <div className="relative">
@@ -19,7 +35,7 @@ export default function Contact() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/40"></div>
         <div className="absolute inset-5 flex items-center justify-center">
-          <div className="text-white text-center">
+          <div ref={headingRef} className="text-white text-center">
             <h1 className="font-bold my-5">GET IN TOUCH</h1>
             <p className="text-5xl font-bold">Contact Us</p>
           </div>
@@ -30,7 +46,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="space-y-8">
-              <div>
+              <div ref={descriptionRef}>
                 <h2 className="font-bold text-xs text-[#91765A] tracking-wider">
                   CONTACT INFO
                 </h2>
@@ -43,9 +59,9 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div ref={servicesRef} className="space-y-6">
                 {contactInfo.map((contact, index) => (
-                  <div className="flex items-center space-x-4">
+                  <div key={index} className="flex items-center space-x-4">
                     <div className="w-14 h-14 rounded-full border border-[#9B8579]/40 flex items-center justify-center">
                       <contact.icon className="text-[#91765A]" />
                     </div>
@@ -61,7 +77,7 @@ export default function Contact() {
             </div>
 
             {/* Right Column - Contact Form */}
-            <div className="bg-black py-8 px-12">
+            <div ref={imagesRef} className="bg-black py-8 px-12">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">
                 Contact Form
               </h2>

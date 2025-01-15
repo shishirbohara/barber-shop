@@ -9,8 +9,20 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { setupScrollTrigger } from "@/gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 export default function Blog() {
+  const imagesRef = useRef<HTMLDivElement>(null!);
+  const headingRef = useRef<HTMLDivElement>(null!);
+
+  useGSAP(() => {
+    setupScrollTrigger({
+      imagesRef,
+      headingRef,
+    });
+  }, []);
   return (
     <>
       <div className="relative">
@@ -23,7 +35,10 @@ export default function Blog() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/40"></div>
-        <div className="absolute inset-5 flex items-center justify-center">
+        <div
+          ref={headingRef}
+          className="absolute inset-5 flex items-center justify-center"
+        >
           <div className="text-white text-center">
             <h1 className="font-bold my-5">BLOGS</h1>
             <p className="text-5xl font-bold">Discover Blogs</p>
@@ -31,7 +46,10 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-52 py-12">
+      <div
+        ref={imagesRef}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 px-52 py-12"
+      >
         {blogData.map((post) => (
           <Card
             key={post.id}

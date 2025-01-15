@@ -5,7 +5,7 @@ export const blogData = [
     excerpt:
       "Discover the latest hair trends that are taking the beauty world by storm...",
     date: "January 10, 2025",
-    image: "/images/gents.jpg",
+    image: "/images/aboutImg.jpg",
     category: "Hair Trends",
   },
   {
