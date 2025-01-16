@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { setupScrollTrigger } from "@/gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useScrollToAppointment } from "@/utils/useScrollToAppointment";
 
 export default function LandingAbout() {
   const headingRef = useRef<HTMLDivElement>(null!);
@@ -14,6 +15,7 @@ export default function LandingAbout() {
   const buttonRef = useRef<HTMLButtonElement>(null!);
   const imagesRef = useRef<HTMLDivElement>(null!);
   const servicesRef = useRef<HTMLDivElement>(null!);
+  const scrollToAppointment = useScrollToAppointment();
 
   useGSAP(() => {
     setupScrollTrigger({
@@ -71,6 +73,7 @@ export default function LandingAbout() {
 
               <button
                 ref={buttonRef}
+                onClick={scrollToAppointment}
                 className="bg-[#8B7355] text-white px-8 py-3 rounded-md hover:bg-[#725E45] transition-colors duration-300 flex items-center space-x-2"
               >
                 <Scissors className="h-5 w-5" />

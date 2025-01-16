@@ -11,7 +11,9 @@ export default function Landing() {
       <LandingAbout />
       <Experience />
       <Service />
-      <Appointment />
+      <div id="appointment">
+        <Appointment />
+      </div>
     </>
   );
 }

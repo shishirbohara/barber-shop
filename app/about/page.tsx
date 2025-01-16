@@ -35,7 +35,9 @@ export default function About() {
         </div>
       </div>
       <LandingAbout />
-      <Appointment />
+      <div id="appointment">
+        <Appointment />
+      </div>
     </>
   );
 }

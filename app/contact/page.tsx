@@ -19,7 +19,7 @@ export default function Contact() {
       headingRef,
       descriptionRef,
       servicesRef,
-      imagesRef
+      imagesRef,
     });
   });
   return (
