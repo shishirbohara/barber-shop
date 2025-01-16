@@ -20,18 +20,18 @@ export default function Experience() {
   }, []);
 
   return (
-    <div className="bg-black xl:px-52 text-white flex xl:flex-row flex-col lg:gap-20 gap-2 items-center lg:py-16">
-      <div ref={imagesRef}>
+    <div className="bg-black xl:px-52 text-white flex lg:flex-row flex-col xl:gap-20 gap-2 items-center lg:py-16">
+      <div ref={imagesRef} className="px-10 py-10">
         <Image
           src={"/images/hero.jpg"}
           alt="experience"
           width={1000}
           height={100}
-          className="object-cover lg:w-[800px] lg:h-[500px]"
+          className="object-cover md:h-96 lg:w-[800px] lg:h-[500px]"
           priority
         />
       </div>
-      <div className="px-2 md:px-0">
+      <div className="px-2 md:px-10 md:pb-10 lg:pb-0">
         <div ref={headingRef}>
           <h1 className="leading-10 text-sm font-bold text-[#91765A]">
             5 YEARS+ OF EXPERIENCE

@@ -41,7 +41,7 @@ export default function GentsServices() {
 
       <div
         ref={featuresRef}
-        className="xl:px-52 xl:py-20 py-8 bg-[#F5EEE7] text-center"
+        className="xl:px-52 lg:px-10 xl:py-20 py-8 bg-[#F5EEE7] text-center"
       >
         <h1 className="md:text-3xl text-lg font-bold md:mb-5 mb-2">
           ELEVATE YOUR STYLE
@@ -57,7 +57,7 @@ export default function GentsServices() {
 
       <div
         ref={servicesRef}
-        className="bg-[#F5EEE7] xl:px-52 px-6 pb-6 xl:pb-20 grid lg:grid-cols-2 lg:gap-x-32"
+        className="bg-[#F5EEE7] lg:px-52 px-6 pb-6 xl:pb-20 grid lg:grid-cols-2 lg:gap-x-32"
       >
         {gentsServiceData.map((data, index) => (
           <div key={index} className="flex justify-between">

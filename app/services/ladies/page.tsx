@@ -41,7 +41,7 @@ export default function ladiesServices() {
 
       <div
         ref={featuresRef}
-        className="xl:px-52 lg:py-20 py-8 bg-[#F5EEE7] text-center"
+        className="xl:px-52 lg:px-20 lg:py-20 py-8 bg-[#F5EEE7] text-center"
       >
         <h1 className="md:text-3xl text-xl font-bold lg:mb-5 mb-2">
           UNLEASH YOUR BEAUTY
@@ -57,7 +57,7 @@ export default function ladiesServices() {
 
       <div
         ref={servicesRef}
-        className="bg-[#F5EEE7] xl:px-52 py-5 md:py-0 px-5 lg:pb-20 grid xl:grid-cols-2 xl:gap-x-32"
+        className="bg-[#F5EEE7] lg:px-52 py-5 md:py-0 px-5 lg:pb-20 grid lg:grid-cols-2 lg:gap-x-32"
       >
         {ladiesServiceData.map((data, index) => (
           <div key={index} className="flex justify-between">

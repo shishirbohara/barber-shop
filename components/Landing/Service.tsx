@@ -25,7 +25,7 @@ export default function Service() {
       </div>
       <div
         ref={imagesRef}
-        className="flex flex-col xl:flex-row xl:justify-between mt-5 lg:mt-20 text-white"
+        className="flex flex-col md:flex-row md:gap-10 px-10 lg:gap-0 md:justify-between mt-5 lg:mt-20 text-white"
       >
         <Link href={"/services/ladies"}>
           <div className="relative cursor-pointer hover:opacity-95">

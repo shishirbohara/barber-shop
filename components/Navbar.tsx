@@ -68,7 +68,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 text-white py-4 px-4 md:px-8 lg:px-52 border-b border-gray-50/10 transition-colors"
+      className="fixed top-0 left-0 right-0 z-50 text-white py-4 px-4 md:px-8 xl:px-52 border-b border-gray-50/10 transition-colors"
     >
       <div className="container mx-auto py-2 md:py-5">
         <div className="flex items-center justify-between">
@@ -79,7 +79,7 @@ export default function Navbar() {
             <Scissors className="h-6 w-6" />
             <span className="text-xl md:text-2xl font-bold">BARBER SHOP</span>
           </Link>
-          <div className="hidden md:flex gap-6 lg:gap-10">
+          <div className="hidden lg:flex gap-6 lg:gap-10">
             {NavLinks.map((nav, index) => (
               <Link
                 key={index}
@@ -92,7 +92,7 @@ export default function Navbar() {
             ))}
           </div>
           <button
-            className="md:hidden text-white focus:outline-none"
+            className="lg:hidden text-white focus:outline-none"
             onClick={toggleMenu}
           >
             {isMenuOpen ? (
@@ -106,7 +106,7 @@ export default function Navbar() {
 
       <div
         ref={menuRef}
-        className={`md:hidden bg-black bg-opacity-95 absolute top-full left-0 right-0 py-4 ${
+        className={`lg:hidden bg-black bg-opacity-95 absolute top-full left-0 right-0 py-4 ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >

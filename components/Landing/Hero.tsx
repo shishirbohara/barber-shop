@@ -79,10 +79,16 @@ export default function Hero() {
       </div>
       <div className="relative h-full pt-10 flex items-center justify-center text-center font-bold text-white">
         <div className="container mx-auto px-2">
-          <p ref={taglineRef} className="leading-10 text-xs md:text-sm tracking-wider">
+          <p
+            ref={taglineRef}
+            className="leading-10 text-xs md:text-sm tracking-wider"
+          >
             SHARP CUTS, SMOOTH STYLE
           </p>
-          <h1 ref={headingRef} className="text-3xl font-extrabold lg:font-bold lg:text-6xl leading-[45px] lg:leading-[70px]">
+          <h1
+            ref={headingRef}
+            className="text-3xl md:tracking-wider lg:tracking-normal font-extrabold lg:font-bold lg:text-6xl leading-[45px] lg:leading-[70px]"
+          >
             TRANSFORM LOOKS <br /> INSPIRE STYLE.
           </h1>
           <p

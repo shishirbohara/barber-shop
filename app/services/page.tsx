@@ -56,7 +56,7 @@ export default function Services() {
 
       <div
         ref={imagesRef}
-        className="grid lg:grid-cols-3 xl:px-52 bg-[#F5EEE7] xl:pt-20"
+        className="grid md:grid-cols-2 lg:grid-cols-3 xl:px-52 bg-[#F5EEE7] md:pt-10 lg:pt-20"
       >
         {ServiceData.map((data, index) => (
           <div
@@ -70,7 +70,9 @@ export default function Services() {
               />
             </div>
             <h1 className="md:text-2xl text-lg font-bold">{data.title}</h1>
-            <p className="md:text-sm text-xs md:leading-7 leading-6">{data.description}</p>
+            <p className="md:text-sm text-xs md:leading-7 leading-6">
+              {data.description}
+            </p>
           </div>
         ))}
       </div>

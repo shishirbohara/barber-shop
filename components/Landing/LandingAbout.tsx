@@ -30,7 +30,7 @@ export default function LandingAbout() {
 
   return (
     <main className="min-h-screen xl:px-52 bg-[#F5EEE7]">
-      <div className="lg:max-w-7xl mx-auto lg:px-8 px-2 lg:py-16 py-5">
+      <div className="lg:max-w-7xl mx-auto sm:px-8 px-2 sm:py-16 py-5">
         <div className="space-y-4">
           <div ref={headingRef} className="space-y-2">
             <p className="text-[#8B7355] text-sm tracking-wider font-bold">
@@ -109,7 +109,7 @@ export default function LandingAbout() {
 
       <div
         ref={servicesRef}
-        className="grid lg:grid-cols-3 lg:gap-10 px-2 md:px-0 pb-10 md:pb-0 lg:py-20"
+        className="grid lg:grid-cols-3 lg:gap-10 px-2 sm:px-10 pb-10"
       >
         {barberData.map((items, index) => (
           <div key={index}>

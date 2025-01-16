@@ -4,9 +4,9 @@ import { FaPinterestP } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="py-10 lg:px-52 px-2 bg-black">
+    <div className="py-10 xl:px-52 lg:px-10 px-2 bg-black">
       <div className="text-white grid lg:grid-cols-3">
-        <div className="text-[#ABA59F] text-center md:text-left">
+        <div className="text-[#ABA59F] text-center lg:text-left">
           <h1 className="md:text-2xl text-lg font-bold mb-3 text-white">
             Contact
           </h1>
@@ -18,7 +18,7 @@ export default function Footer() {
           <p className="underline underline-offset-8 decoration-[#91765A] text-sm md:text-base">
             info@abishmagar.com
           </p>
-          <div className="my-7 flex justify-center md:justify-normal gap-3 cursor-pointer text-[#91765A]">
+          <div className="my-7 flex justify-center lg:justify-normal gap-3 cursor-pointer text-[#91765A]">
             <CiInstagram size={20} />
             <CiFacebook size={20} />
             <CiYoutube size={20} />
@@ -28,13 +28,13 @@ export default function Footer() {
         </div>
 
         <div className="lg:max-w-64 text-[#ABA59F]">
-          <h1 className="md:text-2xl text-center md:text-left text-lg font-bold mb-3 text-white">
+          <h1 className="md:text-2xl text-center lg:text-left text-lg font-bold mb-3 text-white">
             Opening Hours
           </h1>
           {OpeningTime.map((timing, index) => (
             <div
               key={index}
-              className="flex px-10 md:px-0 text-sm md:text-base justify-between items-center space-y-2"
+              className="flex px-10 md:px-40 lg:px-0 text-sm md:text-base justify-between items-center space-y-2"
             >
               <p>{timing.day}</p>
               <p>{timing.time}</p>
@@ -42,11 +42,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="lg:max-w-[333px] mt-5 md:mt-0">
-          <h1 className="lg:text-2xl text-lg text-center md:text-left font-bold mb-3">
+        <div className="lg:max-w-[333px] mt-5 md:mt-8 lg:mt-0">
+          <h1 className="lg:text-2xl text-lg text-center lg:text-left font-bold mb-3">
             Subscribe
           </h1>
-          <p className="text-[#ABA59F] md:mb-10 mb-3 text-sm md:text-base text-center md:text-left">
+          <p className="text-[#ABA59F] md:mb-10 mb-3 text-sm md:text-base text-center lg:text-left">
             Subscribe to take advantage of our campaigns and gift certificates.
           </p>
           <div className="relative">

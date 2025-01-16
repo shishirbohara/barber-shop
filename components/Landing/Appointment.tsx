@@ -31,7 +31,7 @@ export default function Appointment() {
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
-      <div className="relative z-10 container mx-auto px-4 py-8 md:py-16 lg:px-52 lg:py-28 flex flex-col lg:flex-row justify-between items-center min-h-screen">
+      <div className="relative z-10 container mx-auto px-4 py-8 md:py-16 xl:px-52 lg:px-10 lg:py-28 flex flex-col lg:flex-row justify-between items-center min-h-screen">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
           <div ref={headingRef} className="flex gap-1 mb-4">
             {Array(5)
@@ -52,7 +52,7 @@ export default function Appointment() {
             </div>
           </div>
         </div>
-        <div ref={imagesRef} className="wfull lg:w-1/2">
+        <div ref={imagesRef} className="w-full md:px-10 lg:px-0 lg:w-1/2">
           <AppointmentForm />
         </div>
       </div>

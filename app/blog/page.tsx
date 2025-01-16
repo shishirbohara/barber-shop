@@ -48,7 +48,7 @@ export default function Blog() {
 
       <div
         ref={imagesRef}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:px-52 lg:py-12 py-5 px-2"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:px-52 lg:px-10 lg:py-12 py-5 px-2"
       >
         {blogData.map((post) => (
           <Card
