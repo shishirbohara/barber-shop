@@ -47,7 +47,7 @@ export default function Experience() {
           Come experience a unique and edgy barbershop for all your hair and
           beard needs. Step into a place where style meets precision, offering
           exceptional grooming services in a vibrant and modern setting. Whether
-          you're looking for a fresh haircut or a perfectly styled beard, we
+          you are looking for a fresh haircut or a perfectly styled beard, we
           have got you covered.
         </p>
         <div ref={featuresRef}>

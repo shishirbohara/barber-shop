@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 
-export default function ladiesServices() {
+export default function LadiesServices() {
   const headingRef = useRef<HTMLDivElement>(null!);
   const featuresRef = useRef<HTMLDivElement>(null!);
   const servicesRef = useRef<HTMLDivElement>(null!);
