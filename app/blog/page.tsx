@@ -40,22 +40,22 @@ export default function Blog() {
           className="absolute inset-5 flex items-center justify-center"
         >
           <div className="text-white text-center">
-            <h1 className="font-bold my-5">BLOGS</h1>
-            <p className="text-5xl font-bold">Discover Blogs</p>
+            <h1 className="font-bold my-3 lg:my-5">BLOGS</h1>
+            <p className="lg:text-5xl text-3xl font-bold">Discover Blogs</p>
           </div>
         </div>
       </div>
 
       <div
         ref={imagesRef}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 px-52 py-12"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:px-52 lg:py-12 py-5 px-2"
       >
         {blogData.map((post) => (
           <Card
             key={post.id}
             className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
-            <div className="relative h-64 w-full">
+            <div className="relative md:h-64 h-52 w-full">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -66,22 +66,22 @@ export default function Blog() {
             </div>
             <CardHeader>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-muted-foreground">
+                <span className="md:text-sm text-xs text-muted-foreground">
                   {post.date}
                 </span>
-                <span className="px-3 py-2 bg-[#91765A] text-white rounded-full text-xs">
+                <span className="md:px-3 px-1.5 md:py-2 py-1 bg-[#91765A] text-white rounded-full text-xs">
                   {post.category}
                 </span>
               </div>
-              <CardTitle className="leading-9 cursor-pointer">
+              <CardTitle className="lg:leading-9 text-lg md:text-2xl leading-6 cursor-pointer">
                 {post.title}
               </CardTitle>
-              <CardDescription className="line-clamp-3">
+              <CardDescription className="line-clamp-3 text-xs md:text-sm">
                 {post.excerpt}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <button className="font-medium text-[#91765A] hover:text-[#91765A]/60 hover-transition">
+              <button className="font-medium text-sm md:text-base text-[#91765A] hover:text-[#91765A]/60 hover-transition">
                 Read More →
               </button>
             </CardContent>

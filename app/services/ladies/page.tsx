@@ -34,14 +34,19 @@ export default function ladiesServices() {
           ref={headingRef}
           className="absolute inset-5 flex flex-col items-center justify-center text-white"
         >
-          <p className="font-bold my-5">LADIES</p>
-          <p className="text-5xl font-bold">Services For Ladies</p>
+          <p className="font-bold my-3 md:my-5">LADIES</p>
+          <p className="md:text-5xl text-3xl font-bold">Services For Ladies</p>
         </div>
       </div>
 
-      <div ref={featuresRef} className="px-52 py-20 bg-[#F5EEE7] text-center">
-        <h1 className="text-3xl font-bold mb-5">UNLEASH YOUR BEAUTY</h1>
-        <p className="leading-8">
+      <div
+        ref={featuresRef}
+        className="xl:px-52 lg:py-20 py-8 bg-[#F5EEE7] text-center"
+      >
+        <h1 className="md:text-3xl text-xl font-bold lg:mb-5 mb-2">
+          UNLEASH YOUR BEAUTY
+        </h1>
+        <p className="leading-8 text-sm md:text-base px-3">
           Unleash Your Beauty with a luxurious salon experience for women
           providing personalized services including haircuts styling coloring
           facials manicures and pedicures. Our skilled professionals use premium
@@ -52,12 +57,12 @@ export default function ladiesServices() {
 
       <div
         ref={servicesRef}
-        className="bg-[#F5EEE7] px-52 pb-20 grid grid-cols-2 gap-x-32"
+        className="bg-[#F5EEE7] xl:px-52 py-5 md:py-0 px-5 lg:pb-20 grid xl:grid-cols-2 xl:gap-x-32"
       >
         {ladiesServiceData.map((data, index) => (
           <div key={index} className="flex justify-between">
-            <h1 className="leading-10">{data.title}</h1>
-            <p className="text-[#957352] italic font-bold text-lg leading-10">
+            <h1 className="md:leading-10 leading-8 text-sm">{data.title}</h1>
+            <p className="text-[#957352] italic font-bold md:text-lg text-base leading-8 md:leading-10">
               Rs {data.price}
             </p>
           </div>

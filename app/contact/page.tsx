@@ -36,13 +36,13 @@ export default function Contact() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/40"></div>
         <div className="absolute inset-5 flex items-center justify-center">
           <div ref={headingRef} className="text-white text-center">
-            <h1 className="font-bold my-5">GET IN TOUCH</h1>
-            <p className="text-5xl font-bold">Contact Us</p>
+            <h1 className="font-bold md:my-5 my-3">GET IN TOUCH</h1>
+            <p className="md:text-5xl text-3xl font-bold">Contact Us</p>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#F5EEE7] px-52 py-12">
+      <div className="bg-[#F5EEE7] xl:px-52 md:py-12">
         <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="space-y-8">
@@ -50,7 +50,9 @@ export default function Contact() {
                 <h2 className="font-bold text-xs text-[#91765A] tracking-wider">
                   CONTACT INFO
                 </h2>
-                <h1 className="mt-2 text-5xl font-bold">Get In Touch</h1>
+                <h1 className="mt-2 md:text-5xl text-3xl font-bold">
+                  Get In Touch
+                </h1>
                 <p className="mt-4 opacity-80 text-sm leading-7 max-w-md">
                   Get in touch with us for any questions, support, or feedback.
                   We value your input and are committed to providing assistance
@@ -76,9 +78,8 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right Column - Contact Form */}
             <div ref={imagesRef} className="bg-black py-8 px-12">
-              <h2 className="text-3xl font-bold text-white mb-8 text-center">
+              <h2 className="md:text-3xl text-xl font-bold text-white md:mb-8 mb-4 text-center">
                 Contact Form
               </h2>
               <form className="space-y-6">

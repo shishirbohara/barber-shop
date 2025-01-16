@@ -29,8 +29,8 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/40"></div>
         <div className="absolute inset-5 flex items-center justify-center">
           <div ref={headingRef} className="text-white text-center">
-            <h1 className="font-bold my-5">ABOUT US</h1>
-            <p className="text-5xl font-bold">Our History</p>
+            <h1 className="font-bold my-3 lg:my-5">ABOUT US</h1>
+            <p className="lg:text-5xl text-3xl font-bold">Our History</p>
           </div>
         </div>
       </div>

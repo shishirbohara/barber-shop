@@ -78,16 +78,16 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
       <div className="relative h-full pt-10 flex items-center justify-center text-center font-bold text-white">
-        <div className="container mx-auto px-4">
-          <p ref={taglineRef} className="leading-10 text-sm tracking-wider">
+        <div className="container mx-auto px-2">
+          <p ref={taglineRef} className="leading-10 text-xs md:text-sm tracking-wider">
             SHARP CUTS, SMOOTH STYLE
           </p>
-          <h1 ref={headingRef} className="text-6xl leading-[70px]">
-            TRANSFORMING LOOKS <br /> INSPIRING STYLE.
+          <h1 ref={headingRef} className="text-3xl font-extrabold lg:font-bold lg:text-6xl leading-[45px] lg:leading-[70px]">
+            TRANSFORM LOOKS <br /> INSPIRE STYLE.
           </h1>
           <p
             ref={contactRef}
-            className="leading-10 my-4 text-sm tracking-wider"
+            className="leading-8 lg:leading-10 my-4 text-xs md:text-sm tracking-wider"
           >
             BHANIMANDAL ST. LTP. APPOINTMENT: 9812345678
           </p>

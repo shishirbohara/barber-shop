@@ -32,9 +32,11 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/50"></div>
         <div className="absolute inset-5 flex items-center justify-center">
           <div ref={headingRef} className="text-white text-center">
-            <h1 className="font-bold my-5">SERVICES</h1>
-            <p className="text-5xl font-bold">Services We Provide</p>
-            <div className="flex justify-center space-x-8 mt-10 font-bold">
+            <h1 className="font-bold my-3 md:my-5">SERVICES</h1>
+            <p className="md:text-5xl text-2xl font-bold">
+              Services We Provide
+            </p>
+            <div className="flex justify-center text-sm md:text-base space-x-8 md:mt-10 mt-5 font-bold">
               <Link
                 href={"/services/ladies"}
                 className="border-y border-[#91765A] px-1 py-0.5 cursor-pointer hover:opacity-80"
@@ -52,11 +54,14 @@ export default function Services() {
         </div>
       </div>
 
-      <div ref={imagesRef} className="grid grid-cols-3 px-52 bg-[#F5EEE7] pt-20">
+      <div
+        ref={imagesRef}
+        className="grid lg:grid-cols-3 xl:px-52 bg-[#F5EEE7] xl:pt-20"
+      >
         {ServiceData.map((data, index) => (
           <div
             key={index}
-            className="bg-[#FDFBF8] mx-5 my-5 text-center py-10 px-6 space-y-5"
+            className="bg-[#FDFBF8] mx-5 my-5 text-center md:py-10 py-5 px-6 md:space-y-5 space-y-2"
           >
             <div className="flex justify-center">
               <data.icon
@@ -64,8 +69,8 @@ export default function Services() {
                 className="text-[#957352] hover:rotate-180 hover-transition"
               />
             </div>
-            <h1 className="text-2xl font-bold">{data.title}</h1>
-            <p className="text-sm leading-7">{data.description}</p>
+            <h1 className="md:text-2xl text-lg font-bold">{data.title}</h1>
+            <p className="md:text-sm text-xs md:leading-7 leading-6">{data.description}</p>
           </div>
         ))}
       </div>

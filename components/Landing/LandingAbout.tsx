@@ -29,26 +29,26 @@ export default function LandingAbout() {
   }, []);
 
   return (
-    <main className="min-h-screen px-52 bg-[#F5EEE7]">
-      <div className="max-w-7xl mx-auto px-8 py-16">
+    <main className="min-h-screen xl:px-52 bg-[#F5EEE7]">
+      <div className="lg:max-w-7xl mx-auto lg:px-8 px-2 lg:py-16 py-5">
         <div className="space-y-4">
           <div ref={headingRef} className="space-y-2">
             <p className="text-[#8B7355] text-sm tracking-wider font-bold">
               SINCE 2020
             </p>
-            <h1 className="text-5xl font-bold text-[#1A1A1A]">
+            <h1 className="text-2xl lg:text-5xl font-bold text-[#1A1A1A]">
               Abish Barber Shop
             </h1>
           </div>
 
-          <div className="grid grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-6">
               <div ref={descriptionRef} className="space-y-4">
-                <p className="text-lg text-[#4A4A4A] leading-relaxed">
+                <p className="text-sm lg:text-lg text-[#4A4A4A] leading-relaxed">
                   Step into style at our trendy salon where hair and beauty meet
                   creativity
                 </p>
-                <p className="text-[#666666] leading-relaxed">
+                <p className="text-[#666666] leading-relaxed text-sm">
                   Experience the art of grooming at its finest with precision
                   haircuts, tailored beard trims, and a stylish atmosphere. Your
                   confidence starts here where tradition meets modern expertise
@@ -56,7 +56,7 @@ export default function LandingAbout() {
                 </p>
               </div>
 
-              <div ref={featuresRef} className="space-y-4">
+              <div ref={featuresRef} className="space-y-2 md:space-y-4">
                 {[
                   "We have professional and certified barbers",
                   "We use quality products to make you look perfect",
@@ -66,7 +66,9 @@ export default function LandingAbout() {
                     <div className="flex-shrink-0">
                       <Check className="h-5 w-5 text-[#8B7355]" />
                     </div>
-                    <span className="text-[#4A4A4A]">{feature}</span>
+                    <span className="text-[#4A4A4A] text-sm md:text-base">
+                      {feature}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -74,14 +76,14 @@ export default function LandingAbout() {
               <button
                 ref={buttonRef}
                 onClick={scrollToAppointment}
-                className="bg-[#8B7355] text-white px-8 py-3 rounded-md hover:bg-[#725E45] transition-colors duration-300 flex items-center space-x-2"
+                className="bg-[#8B7355] text-white px-8 py-3 text-sm md:text-base rounded-md hover:bg-[#725E45] hover-transition flex items-center space-x-2"
               >
                 <Scissors className="h-5 w-5" />
                 <span>Book Appointment</span>
               </button>
             </div>
 
-            <div ref={imagesRef} className="grid grid-cols-2 gap-8">
+            <div ref={imagesRef} className="grid grid-cols-2 gap-8 py-10">
               <div className="aspect-[3/4]">
                 <Image
                   src="/images/hair.jpg"
@@ -105,16 +107,19 @@ export default function LandingAbout() {
         </div>
       </div>
 
-      <div ref={servicesRef} className="grid grid-cols-3 gap-10 py-20">
+      <div
+        ref={servicesRef}
+        className="grid lg:grid-cols-3 lg:gap-10 px-2 md:px-0 pb-10 md:pb-0 lg:py-20"
+      >
         {barberData.map((items, index) => (
           <div key={index}>
             <div className="flex items-center space-x-4">
-              <items.icon className="h-8 w-8 text-[#8B7355]" />
-              <h2 className="text-xl font-bold text-[#1A1A1A] my-3">
+              <items.icon className="lg:h-8 lg:w-8 text-[#8B7355]" />
+              <h2 className="lg:text-xl text-base font-bold text-[#1A1A1A] my-3">
                 {items.title}
               </h2>
             </div>
-            <p className="text-[#4A4A4A] text-sm leading-6 ml-12">
+            <p className="text-[#4A4A4A] text-sm leading-6 ml-10 lg:ml-12">
               {items.body}
             </p>
           </div>

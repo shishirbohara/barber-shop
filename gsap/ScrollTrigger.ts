@@ -83,7 +83,7 @@ export const setupScrollTrigger = (
         trigger: imagesRef.current,
         start: "top 70%",
       },
-      x: 50,
+      y: 50,
       opacity: 0,
       duration: 1,
       stagger: 0.3,
