@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useRef } from "react";
-import { setupScrollTrigger } from "@/gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { applyParallaxEffect } from "@/gsap/parallax";
 
 export default function Experience() {
   const headingRef = useRef<HTMLDivElement>(null!);
@@ -11,12 +11,10 @@ export default function Experience() {
   const featuresRef = useRef<HTMLDivElement>(null!);
 
   useGSAP(() => {
-    setupScrollTrigger({
-      headingRef,
-      descriptionRef,
-      imagesRef,
-      featuresRef,
-    });
+    applyParallaxEffect(imagesRef.current, 20);
+    applyParallaxEffect(headingRef.current, -20);
+    applyParallaxEffect(descriptionRef.current, -50);
+    applyParallaxEffect(featuresRef.current, -30);
   }, []);
 
   return (

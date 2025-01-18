@@ -3,14 +3,17 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { applyParallaxEffect } from "@/gsap/parallax";
 import { useScrollToAppointment } from "@/utils/useScrollToAppointment";
+import gsap from "gsap";
 
 export default function Hero() {
   const taglineRef = useRef(null);
   const headingRef = useRef(null);
   const contactRef = useRef(null);
   const buttonRef = useRef(null);
+  const imageRef = useRef(null);
+  const contentRef = useRef(null);
   const scrollToAppointment = useScrollToAppointment();
 
   useGSAP(() => {
@@ -62,22 +65,32 @@ export default function Hero() {
         },
         "-=0.5"
       );
+
+    if (imageRef.current) {
+      applyParallaxEffect(imageRef.current, 30, { scale: 1.5 });
+    }
+    if (contentRef.current) {
+      applyParallaxEffect(contentRef.current, -30);
+    }
   }, []);
 
   return (
-    <section className="relative h-screen">
-      <div className="absolute inset-0">
+    <section className="relative h-screen overflow-hidden">
+      <div ref={imageRef} className="absolute inset-0">
         <Image
           src="/images/hero.jpg"
           alt="image"
           width={3000}
           height={2000}
-          className="w-full h-screen object-cover"
+          className="w-full h-screen object-cover scale-[1.1]"
           priority
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      <div className="relative h-full pt-10 flex items-center justify-center text-center font-bold text-white">
+      <div
+        ref={contentRef}
+        className="relative h-full pt-10 flex items-center justify-center text-center font-bold text-white"
+      >
         <div className="container mx-auto px-2">
           <p
             ref={taglineRef}
