@@ -1,14 +1,20 @@
 "use client";
 import Appointment from "@/components/Landing/Appointment";
 import Service from "@/components/Landing/Service";
-import { ServiceData } from "@/utils/serviceData";
 import Image from "next/image";
 import Link from "next/link";
 import { setupScrollTrigger } from "@/gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 
+interface ServiceType {
+  service_name: string;
+  description: string;
+  image?: string | null;
+}
+
 export default function Services() {
+  const [services, setServices] = useState<ServiceType[]>([]);
   const headingRef = useRef<HTMLDivElement>(null!);
   const imagesRef = useRef<HTMLDivElement>(null!);
 
@@ -18,6 +24,28 @@ export default function Services() {
       imagesRef,
     });
   });
+
+  useEffect(() => {
+    async function fetchAllServices() {
+      try {
+        const result = await fetch("http://localhost:8080/services", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await result.json();
+
+        result.ok
+          ? setServices(data)
+          : console.log("Error fetching services data");
+      } catch (error) {
+        console.log("Error fetching services", error);
+      }
+    }
+    fetchAllServices();
+  }, []);
+
   return (
     <>
       <div className="relative">
@@ -58,20 +86,28 @@ export default function Services() {
         ref={imagesRef}
         className="grid md:grid-cols-2 lg:grid-cols-3 xl:px-52 bg-[#F5EEE7] md:pt-10 lg:pt-20"
       >
-        {ServiceData.map((data, index) => (
+        {services.map((service, index) => (
           <div
             key={index}
             className="bg-[#FDFBF8] mx-5 my-5 text-center md:py-10 py-5 px-6 md:space-y-5 space-y-2"
           >
-            <div className="flex justify-center">
-              <data.icon
-                size={40}
-                className="text-[#957352] hover:rotate-180 hover-transition"
-              />
-            </div>
-            <h1 className="md:text-2xl text-lg font-bold">{data.title}</h1>
+            {service.image && (
+              <div>
+                <Image
+                  src={service.image}
+                  width={100}
+                  height={100}
+                  alt={service.service_name}
+                  className="w-32 h-40"
+                />
+              </div>
+            )}
+
+            <h1 className="md:text-2xl text-lg font-bold">
+              {service.service_name}
+            </h1>
             <p className="md:text-sm text-xs md:leading-7 leading-6">
-              {data.description}
+              {service.description}
             </p>
           </div>
         ))}
