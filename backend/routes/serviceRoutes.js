@@ -37,4 +37,14 @@ router.post("/services", upload.single("image"), async (req, res) => {
   }
 });
 
+router.get("/services", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM services");
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.log("Error fetching data:", error);
+    res.status(500).json({ error: "Error fetching data" });
+  }
+});
+
 module.exports = router;
