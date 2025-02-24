@@ -25,17 +25,20 @@ export default function Services() {
       headingRef,
       imagesRef,
     });
-  });
+  }, []);
 
   useEffect(() => {
     async function fetchAllServices() {
       try {
-        const result = await fetch("http://localhost:8080/services", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const result = await fetch(
+          "barber-shop-production-37f4.up.railway.app/services",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         const data = await result.json();
 
         if (result.ok) {
@@ -46,8 +49,7 @@ export default function Services() {
       } catch (error) {
         console.log("Error fetching services", error);
       } finally {
-        setLoading(false)
-       
+        setLoading(false);
       }
     }
     fetchAllServices();
