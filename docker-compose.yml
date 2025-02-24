@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8080
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:12345678@db:5432/barber_shop
+      - PORT=8080
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=barber_shop
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:   
+  pgdata:

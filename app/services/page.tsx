@@ -6,6 +6,7 @@ import Link from "next/link";
 import { setupScrollTrigger } from "@/gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
+import { ThreeDots } from "react-loader-spinner";
 
 interface ServiceType {
   service_name: string;
@@ -14,6 +15,7 @@ interface ServiceType {
 }
 
 export default function Services() {
+  const [loading, setLoading] = useState(true);
   const [services, setServices] = useState<ServiceType[]>([]);
   const headingRef = useRef<HTMLDivElement>(null!);
   const imagesRef = useRef<HTMLDivElement>(null!);
@@ -36,11 +38,16 @@ export default function Services() {
         });
         const data = await result.json();
 
-        result.ok
-          ? setServices(data)
-          : console.log("Error fetching services data");
+        if (result.ok) {
+          setServices(data);
+        } else {
+          console.log("error");
+        }
       } catch (error) {
         console.log("Error fetching services", error);
+      } finally {
+        setLoading(false)
+       
       }
     }
     fetchAllServices();
@@ -82,36 +89,42 @@ export default function Services() {
         </div>
       </div>
 
-      <div
-        ref={imagesRef}
-        className="grid md:grid-cols-2 lg:grid-cols-3 xl:px-52 bg-[#F5EEE7] md:pt-10 lg:pt-20"
-      >
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-[#FDFBF8] mx-5 my-5 text-center md:py-10 py-5 px-6 md:space-y-5 space-y-2"
-          >
-            {service.image && (
-              <div>
-                <Image
-                  src={service.image}
-                  width={100}
-                  height={100}
-                  alt={service.service_name}
-                  className="w-32 h-40"
-                />
-              </div>
-            )}
+      {loading ? (
+        <div className="bg-[#F5EEE7] flex justify-center items-center min-h-[20vh]">
+          <ThreeDots color="black" width={40} height={40} />
+        </div>
+      ) : (
+        <div
+          ref={imagesRef}
+          className="grid md:grid-cols-2 lg:grid-cols-3 xl:px-52 bg-[#F5EEE7] md:pt-10 lg:pt-20"
+        >
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-[#FDFBF8] mx-5 my-5 text-center md:py-10 py-5 px-6 md:space-y-5 space-y-2"
+            >
+              {service.image && (
+                <div>
+                  <Image
+                    src={service.image}
+                    width={100}
+                    height={100}
+                    alt={service.service_name}
+                    className="w-32 h-40"
+                  />
+                </div>
+              )}
 
-            <h1 className="md:text-2xl text-lg font-bold">
-              {service.service_name}
-            </h1>
-            <p className="md:text-sm text-xs md:leading-7 leading-6">
-              {service.description}
-            </p>
-          </div>
-        ))}
-      </div>
+              <h1 className="md:text-2xl text-lg font-bold">
+                {service.service_name}
+              </h1>
+              <p className="md:text-sm text-xs md:leading-7 leading-6">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
       <Service />
       <Appointment />
     </>
